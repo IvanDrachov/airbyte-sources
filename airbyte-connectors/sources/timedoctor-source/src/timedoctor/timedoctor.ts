@@ -10,7 +10,16 @@ import VErrorType, {VError} from 'verror';
 
 
 import { Company } from './types/company.type';
-import { Users } from './types/users/types';
+import { Users } from './types/users.type';
+import { ActivityWorklog } from './types/activity_worklog.type';
+import { ActivityTimeuse } from './types/activity_timeuse.type';
+import { ActivityTimeuseStats } from './types/activity_timeuse_stats.type';
+import { Project } from './types/projects.type';
+import { Disconnectivity } from './types/disconnectivity.type';
+import { StatsTotal } from './types/stats.total.type';
+import { StatsSummary } from './types/stats.summary.type';
+import { StatsCategory } from './types/stats.category.type';
+import { File } from './types/files.type';
 
 const DEFAULT_TIMEDOCTOR_URL = 'https://api2.timedoctor.com/api/1.0/';
 const DEFAULT_PAGELEN = 100;
@@ -349,6 +358,318 @@ export class Timedoctor {
       
     };
   }
+
+  private buildUsers(data: Dictionary<any>): Users {
+    const {
+      target,
+      target: {author, parents, repository: repo},
+    } = data;
+
+    return {
+      role: data.role,
+      hiredAt: data.hiredAt,
+      lastSeen: {
+        updatedAt: data.lastSeen.updatedAt,
+        online: data.lastSeen.online,
+        ip: data.lastSeen.ip
+      },
+      tagIds: data.tagIds,
+      onlyProjectIds: data.onlyProjectIds,
+      timezone: data.timezone,
+      isSilent: data.isSilent,
+      isInteractive: data.isInteractive,
+      trackingMode: data.trackingMode,
+      oauth: {
+        enabled: data.oauth.enabled
+      },
+      name: data.name,
+      employeeId: data.employeeId,
+      exists: data.exists,
+      active: data.active,
+      screenshots: data.screenshots,
+      videos: data.videos,
+      workCheckInterval: data.workCheckInterval,
+      allowEditTime: data.allowEditTime,
+      canEditTime: data.canEditTime,
+      poorTimeusePopup: data.poorTimeusePopup,
+      allowDeleteScreenshots: data.allowDeleteScreenshots,
+      tasksMode: data.tasksMode,
+      trackingType: data.trackingType,
+      showOnReports: data.showOnReports,
+      emailReports: data.emailReports,
+      blurScreenshots: data.blurScreenshots,
+      allowNoBreak: data.allowNoBreak,
+      trackInternetConnectivity: data.trackInternetConnectivity,
+      signupStep: data.signupStep,
+      stripUrlQuery: data.stripUrlQuery,
+      allowAdminSID: data.allowAdminSID,
+      hideScreencasts: data.hideScreencasts,
+      payrollAccess: data.payrollAccess,
+      billingAccess: data.billingAccess,
+      payrollFeature: data.payrollFeature,
+      screencastsFeature: data.screencastsFeature,
+      workScheduleFeature: data.workScheduleFeature,
+      trackConnectivity: data.trackConnectivity,
+      allowManagerTagCategories: data.allowManagerTagCategories,
+      allowManagerProjectsTasks: data.allowManagerProjectsTasks,
+      allowManagerInviteUsers: data.allowManagerInviteUsers,
+      allowManagerWorkSchedules: data.allowManagerWorkSchedules,
+      forceAutostart: data.forceAutostart,
+      firstDayOfWeek: data.firstDayOfWeek,
+      custom: {
+        isUEMember: data.custom.isUEMember,
+        showSpecialOffer: data.custom.showSpecialOffer,
+        trackedAccountCreated: data.custom.trackedAccountCreated,
+        onboardingStep: data.custom.onboardingStep,
+        completedOnBoarding: data.custom.completedOnBoarding,
+        rdbmsStatus: data.company.settings.custom.rdbmsStatus
+      },
+      webAndAppTracking: data.webAndAppTracking,
+      whoCanAccessScreenshots: data.whoCanAccessScreenshots,
+      worklife: {
+        tooManyHours: {
+          included: data.worklife.tooManyHours.included,
+          value: data.worklife.tooManyHours.value
+        },
+        lateHoursAfter: {
+          included: data.worklife.lateHoursAfter.included,
+          value: data.worklife.lateHoursAfter.value
+        },
+        hoursOutsideShiftWork: {
+          included: data.worklife.hoursOutsideShiftWork.included,
+          value: data.worklife.hoursOutsideShiftWork.value
+        },
+        weekendWork: {
+          included: data.worklife.weekendWork.included
+        }
+      },
+      trackedDataRetentionPeriod: data.trackedDataRetentionPeriod,
+      advancedPayroll: data.advancedPayroll,
+      id: data.id,
+      email: data.email,
+      emailConfirmed: data.emailConfirmed,
+      hasPassword: data.hasPassword,
+      createdAt: data.createdAt,
+      lastSeenGlobal: {
+        updatedAt: data.lastSeenGlobal.updatedAt,
+        online: data.lastSeenGlobal.online,
+        ip: data.lastSeenGlobal.ip
+      },
+      invitePending: data.invitePending,
+      managerBannerDismissed: data.managerBannerDismissed,
+      status: data.status
+
+    };
+  }
+
+  private buildWorklog(data: Dictionary<any>): ActivityWorklog {
+    const {
+      target,
+      target: {author, parents, repository: repo},
+    } = data;
+
+    return {
+      taskId: data.taskId,
+      projectId: data.projectId,
+      mode: data.mode,
+      date: data.date,
+      start: data.start,
+      time: data.time,
+      userId: data.userId,
+      taskName: data.taskName,
+      projectName: data.projectName,
+      deviceId: data.deviceId
+    }
+  }
+
+  private buildTimeuse(data: Dictionary<any>): ActivityTimeuse {
+    const {
+      target,
+      target: {author, parents, repository: repo},
+    } = data;
+
+    return {
+      start: data.start,
+      time: data.time,
+      score: data.scope,
+      category: {
+        id: data.category.id,
+        entity: data.category.entity,
+        name: data.category.name,
+        scope: data.category.scope,
+        score: data.category.score,
+        time: data.category.time
+      },
+      type: data.type,
+      value: data.value,
+      title: data.title
+    }
+  }
+
+  private buildTimeuseStats(data: Dictionary<any>): ActivityTimeuseStats {
+    const {
+      target,
+      target: {author, parents, repository: repo},
+    } = data;
+
+    return {
+      type: data.type,
+      value: data.value,
+      title: data.title,
+      score: data.score,
+      time: data.time,
+      category: data.category,
+      start: data.start,
+      end: data.end
+    }
+  }
+
+  private buildProject(data: Dictionary<any>): Project {
+    const {
+      target,
+      target: {author, parents, repository: repo},
+    } = data;
+
+    return {
+      id: data.id,
+      name: data.name,
+      creatorId: data.creatorId,
+      weight: data.weight,
+      deleted: data.deleted,
+      scope: data.scope
+    }
+  }
+
+  private buildDisconnectivity(data: Dictionary<any>): Disconnectivity {
+
+    return {
+      start: data.start,
+      end: data.end,
+      time: data.time,
+      userId: data.userId
+    }
+  }
+
+  private buildStatsTotal(data: Dictionary<any>): StatsTotal {
+
+    return {
+      userId: data.userId,
+      idleSec: data.idleSec,
+      idleMins: data.idleMins,
+      idleMinsRatio: data.idleMinsRatio,
+      idleSecRatio: data.idleSecRatio,
+      totalSec: data.totalSec,
+      total: data.total,
+      totalMins: data.totalMins,
+      mobile: data.mobile,
+      mobileRatio: data.mobileRatio,
+      manual: data.manual,
+      manualRatio: data.manualRatio,
+      modeTotal: data.modeTotal
+    }
+  }
+
+  private buildStatsSummary(data: Dictionary<any>): StatsSummary {
+
+    return {
+      userId: data.userId,
+      idleSec: data.idleSec,
+      idleMins: data.idleMins,
+      idleMinsRatio: data.idleMinsRatio,
+      idleSecRatio: data.idleSecRatio,
+      totalSec: data.totalSec,
+      total: data.total,
+      totalMins: data.totalMins,
+      mobile: data.mobile,
+      mobileRatio: data.mobileRatio,
+      manual: data.manual,
+      manualRatio: data.manualRatio,
+      modeTotal: data.modeTotal,
+      ratio: data.ratio,
+      ratioCount: data.ratioCount,
+      ratioTotal: data.ratioTotal,
+      score: [
+        {
+          id: data.score.id,
+          total: data.score.total,
+          ratio: data.score.ratio
+        }
+      ]
+    }
+  }
+
+  private buildStatsCategory(data: Dictionary<any>): StatsCategory {
+
+    return {
+      userId: data.userId,
+      idleSec: data.idleSec,
+      idleMins: data.idleMins,
+      idleMinsRatio: data.idleMinsRatio,
+      idleSecRatio: data.idleSecRatio,
+      totalSec: data.totalSec,
+      total: data.total,
+      totalMins: data.totalMins,
+      ratio: data.ratio,
+      ratioCount: data.ratioCount,
+      ratioTotal: data.ratioTotal,
+      score: [
+        {
+          id: data.score.id,
+          total: data.score.total,
+          ratio: data.score.ratio
+        }
+      ]
+    }
+  }
+
+  private buildFiles(data: Dictionary<any>): File {
+
+    return {
+      userId: data.userId,
+      date: data.date,
+      deviceId: data.deviceId,
+      numbers: [
+        {
+          number: data.numbers.number,
+          mime: data.numbers.mime,
+          deleted: data.numbers.deleted,
+          avgActivity: data.numbers.avgActivity,
+          meta: {
+            contentType: data.numbers.meta.contentType,
+            blur: data.numbers.meta.blur,
+            chunkId: data.numbers.meta.chunkId,
+            clicks: data.numbers.meta.clicks,
+            movements: data.numbers.meta.movements,
+            keys: data.numbers.meta.keys,
+            period: data.numbers.meta.period,
+            imageSize: data.numbers.meta.imageSize,
+            imageMd5: data.numbers.meta.imageMd5,
+            createdAt: data.numbers.meta.createdAt,
+            h: data.numbers.meta.h,
+            w: data.numbers.meta.w,
+            projectId: data.numbers.meta.projectId,
+            taskId: data.numbers.meta.taskId,
+            screenNumber: data.numbers.meta.screenNumber,
+            type: data.numbers.meta.type
+          },
+          url: data.numbers.url,
+          urls: {
+            original: data.numbers.urls.original,
+            small: data.numbers.urls.small
+          },
+          entity: data.numbers.entity
+        }
+      ]
+    }
+  }
+
+
+
+
+
+
+
+
 
 }  
 

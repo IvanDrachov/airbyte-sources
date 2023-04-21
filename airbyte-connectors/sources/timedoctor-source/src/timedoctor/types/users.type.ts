@@ -7,12 +7,8 @@
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface Users {
-    data:   Datum[];
-    paging: Paging;
-}
 
-export interface Datum {
+export interface Users {
     role:                       string;
     hiredAt:                    Date;
     lastSeen:                   LastSeen;
