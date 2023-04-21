@@ -1,0 +1,335 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "data": {
+          "items": {
+            "properties": {
+              "active": {
+                "type": "boolean"
+              },
+              "advancedPayroll": {
+                "type": "boolean"
+              },
+              "allowAdminSID": {
+                "type": "boolean"
+              },
+              "allowDeleteScreenshots": {
+                "type": "boolean"
+              },
+              "allowEditTime": {
+                "type": "boolean"
+              },
+              "allowManagerInviteUsers": {
+                "type": "boolean"
+              },
+              "allowManagerProjectsTasks": {
+                "type": "boolean"
+              },
+              "allowManagerTagCategories": {
+                "type": "boolean"
+              },
+              "allowManagerWorkSchedules": {
+                "type": "boolean"
+              },
+              "allowNoBreak": {
+                "type": "boolean"
+              },
+              "billingAccess": {
+                "type": "boolean"
+              },
+              "blurScreenshots": {
+                "type": "boolean"
+              },
+              "canEditTime": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "custom": {
+                "properties": {
+                  "completedOnBoarding": {
+                    "type": "boolean"
+                  },
+                  "completedStep": {
+                    "properties": {
+                      "addEmployee": {
+                        "type": "boolean"
+                      },
+                      "companySettings": {
+                        "type": "boolean"
+                      },
+                      "setupPassword": {
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "isUEMember": {
+                    "type": "boolean"
+                  },
+                  "onboardingStep": {
+                    "type": "string"
+                  },
+                  "rdbmsStatus": {
+                    "type": "string"
+                  },
+                  "showSpecialOffer": {
+                    "type": "boolean"
+                  },
+                  "tdAnonymousId": {
+                    "type": "string"
+                  },
+                  "trackedAccountCreated": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "type": "string"
+              },
+              "emailConfirmed": {
+                "type": "boolean"
+              },
+              "emailReports": {
+                "type": "string"
+              },
+              "employeeId": {
+                "type": "string"
+              },
+              "exists": {
+                "type": "boolean"
+              },
+              "firstDayOfWeek": {
+                "type": "integer"
+              },
+              "forceAutostart": {
+                "type": "boolean"
+              },
+              "hasPassword": {
+                "type": "boolean"
+              },
+              "hideScreencasts": {
+                "type": "boolean"
+              },
+              "hiredAt": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "invitePending": {
+                "type": "boolean"
+              },
+              "isInteractive": {
+                "type": "boolean"
+              },
+              "isSilent": {
+                "type": "boolean"
+              },
+              "lastSeen": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "properties": {
+                      "ip": {
+                        "type": "string"
+                      },
+                      "online": {
+                        "type": "boolean"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                ]
+              },
+              "lastSeenGlobal": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "properties": {
+                      "ip": {
+                        "type": "string"
+                      },
+                      "online": {
+                        "type": "boolean"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                ]
+              },
+              "managerBannerDismissed": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "onlyProjectIds": {
+                "type": "array"
+              },
+              "payrollAccess": {
+                "type": "boolean"
+              },
+              "payrollFeature": {
+                "type": "boolean"
+              },
+              "poorTimeusePopup": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "screencastsFeature": {
+                "type": "boolean"
+              },
+              "screenshots": {
+                "type": "integer"
+              },
+              "showOnReports": {
+                "type": "boolean"
+              },
+              "signupStep": {
+                "type": "integer"
+              },
+              "status": {
+                "type": "string"
+              },
+              "stripUrlQuery": {
+                "type": "boolean"
+              },
+              "tagIds": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "tasksMode": {
+                "type": "string"
+              },
+              "timezone": {
+                "type": "string"
+              },
+              "trackConnectivity": {
+                "type": "boolean"
+              },
+              "trackInternetConnectivity": {
+                "type": "boolean"
+              },
+              "trackedDataRetentionPeriod": {
+                "type": "integer"
+              },
+              "trackingMode": {
+                "type": "string"
+              },
+              "trackingType": {
+                "type": "string"
+              },
+              "videos": {
+                "type": "string"
+              },
+              "webAndAppTracking": {
+                "type": "string"
+              },
+              "whoCanAccessScreenshots": {
+                "type": "string"
+              },
+              "workCheckInterval": {
+                "type": "integer"
+              },
+              "workScheduleFeature": {
+                "type": "boolean"
+              },
+              "worklife": {
+                "properties": {
+                  "hoursOutsideShiftWork": {
+                    "properties": {
+                      "included": {
+                        "type": "boolean"
+                      },
+                      "value": {
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "lateHoursAfter": {
+                    "properties": {
+                      "included": {
+                        "type": "boolean"
+                      },
+                      "value": {
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "tooManyHours": {
+                    "properties": {
+                      "included": {
+                        "type": "boolean"
+                      },
+                      "value": {
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "weekendWork": {
+                    "properties": {
+                      "included": {
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "paging": {
+          "properties": {
+            "cur": {
+              "type": "integer"
+            },
+            "limit": {
+              "type": "integer"
+            },
+            "nItems": {
+              "type": "integer"
+            },
+            "next": {
+              "type": "null"
+            },
+            "totalCount": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+    }    
+}

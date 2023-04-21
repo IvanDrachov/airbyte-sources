@@ -1,0 +1,5 @@
+{
+  "server_url": "http://localhost",
+  "token": "ok",
+  "cutoff_days": 30
+}

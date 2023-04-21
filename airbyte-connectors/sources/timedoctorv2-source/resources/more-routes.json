@@ -1,0 +1,20 @@
+{
+    "companies": {
+      "getCompanies": {
+        "headers": {
+          "accept": "application/json"
+        },
+        "method": "GET",
+        "params": {
+          "token": {
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        },
+        "url": "companies?token={token}"
+      }
+      
+    }
+  }
+  

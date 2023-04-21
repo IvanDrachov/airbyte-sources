@@ -1,0 +1,507 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "advancedPayroll": {
+          "type": "boolean"
+        },
+        "allowAdminSID": {
+          "type": "boolean"
+        },
+        "allowDeleteScreenshots": {
+          "type": "boolean"
+        },
+        "allowEditTime": {
+          "type": "boolean"
+        },
+        "allowManagerInviteUsers": {
+          "type": "boolean"
+        },
+        "allowManagerProjectsTasks": {
+          "type": "boolean"
+        },
+        "allowManagerTagCategories": {
+          "type": "boolean"
+        },
+        "allowManagerWorkSchedules": {
+          "type": "boolean"
+        },
+        "allowNoBreak": {
+          "type": "boolean"
+        },
+        "billingAccess": {
+          "type": "boolean"
+        },
+        "blurScreenshots": {
+          "type": "boolean"
+        },
+        "canEditTime": {
+          "type": "string"
+        },
+        "company": {
+          "properties": {
+            "allUsersTagId": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "forceUserCount": {
+              "type": "integer"
+            },
+            "hasManagedApprovals": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "minBillableUsers": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "noWorkspaces": {
+              "type": "boolean"
+            },
+            "oldCompanyId": {
+              "type": "string"
+            },
+            "onlyDomainsFor": {
+              "type": "array"
+            },
+            "parentId": {
+              "type": "string"
+            },
+            "pricingPlan": {
+              "type": "string"
+            },
+            "settings": {
+              "properties": {
+                "active": {
+                  "type": "boolean"
+                },
+                "advancedPayroll": {
+                  "type": "boolean"
+                },
+                "allowAdminSID": {
+                  "type": "boolean"
+                },
+                "allowDeleteScreenshots": {
+                  "type": "boolean"
+                },
+                "allowEditTime": {
+                  "type": "boolean"
+                },
+                "allowManagerInviteUsers": {
+                  "type": "boolean"
+                },
+                "allowManagerProjectsTasks": {
+                  "type": "boolean"
+                },
+                "allowManagerTagCategories": {
+                  "type": "boolean"
+                },
+                "allowManagerWorkSchedules": {
+                  "type": "boolean"
+                },
+                "allowNoBreak": {
+                  "type": "boolean"
+                },
+                "billingAccess": {
+                  "type": "boolean"
+                },
+                "blurScreenshots": {
+                  "type": "boolean"
+                },
+                "canEditTime": {
+                  "type": "string"
+                },
+                "custom": {
+                  "properties": {
+                    "completedOnBoarding": {
+                      "type": "boolean"
+                    },
+                    "isUEMember": {
+                      "type": "boolean"
+                    },
+                    "onboardingStep": {
+                      "type": "string"
+                    },
+                    "rdbmsStatus": {
+                      "type": "string"
+                    },
+                    "showSpecialOffer": {
+                      "type": "boolean"
+                    },
+                    "trackedAccountCreated": {
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "emailReports": {
+                  "type": "string"
+                },
+                "employeeId": {
+                  "type": "string"
+                },
+                "exists": {
+                  "type": "boolean"
+                },
+                "firstDayOfWeek": {
+                  "type": "integer"
+                },
+                "forceAutostart": {
+                  "type": "boolean"
+                },
+                "hideScreencasts": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "payrollAccess": {
+                  "type": "boolean"
+                },
+                "payrollFeature": {
+                  "type": "boolean"
+                },
+                "poorTimeusePopup": {
+                  "type": "boolean"
+                },
+                "screencastsFeature": {
+                  "type": "boolean"
+                },
+                "screenshots": {
+                  "type": "integer"
+                },
+                "showOnReports": {
+                  "type": "boolean"
+                },
+                "signupStep": {
+                  "type": "integer"
+                },
+                "stripUrlQuery": {
+                  "type": "boolean"
+                },
+                "tasksMode": {
+                  "type": "string"
+                },
+                "trackConnectivity": {
+                  "type": "boolean"
+                },
+                "trackInternetConnectivity": {
+                  "type": "boolean"
+                },
+                "trackedDataRetentionPeriod": {
+                  "type": "integer"
+                },
+                "trackingMode": {
+                  "type": "string"
+                },
+                "trackingType": {
+                  "type": "string"
+                },
+                "videos": {
+                  "type": "string"
+                },
+                "webAndAppTracking": {
+                  "type": "string"
+                },
+                "whoCanAccessScreenshots": {
+                  "type": "string"
+                },
+                "workCheckInterval": {
+                  "type": "integer"
+                },
+                "workScheduleFeature": {
+                  "type": "boolean"
+                },
+                "worklife": {
+                  "properties": {
+                    "hoursOutsideShiftWork": {
+                      "properties": {
+                        "included": {
+                          "type": "boolean"
+                        },
+                        "value": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "lateHoursAfter": {
+                      "properties": {
+                        "included": {
+                          "type": "boolean"
+                        },
+                        "value": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "tooManyHours": {
+                      "properties": {
+                        "included": {
+                          "type": "boolean"
+                        },
+                        "value": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "weekendWork": {
+                      "properties": {
+                        "included": {
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "splitTest": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string"
+                    ]
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "subscription": {
+              "properties": {
+                "expires": {
+                  "type": "string"
+                },
+                "plan": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "timezone": {
+              "type": "string"
+            },
+            "userCount": {
+              "type": "integer"
+            },
+            "userDiscount": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "custom": {
+          "properties": {
+            "completedStep": {
+              "properties": {
+                "addEmployee": {
+                  "type": "boolean"
+                },
+                "companySettings": {
+                  "type": "boolean"
+                },
+                "setupPassword": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "tdAnonymousId": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "emailReports": {
+          "type": "string"
+        },
+        "employeeId": {
+          "type": "string"
+        },
+        "exists": {
+          "type": "boolean"
+        },
+        "firstDayOfWeek": {
+          "type": "integer"
+        },
+        "forceAutostart": {
+          "type": "boolean"
+        },
+        "hideScreencasts": {
+          "type": "boolean"
+        },
+        "hiredAt": {
+          "type": "string"
+        },
+        "isInteractive": {
+          "type": "boolean"
+        },
+        "isSilent": {
+          "type": "boolean"
+        },
+        "lastSeen": {
+          "properties": {
+            "ip": {
+              "type": "string"
+            },
+            "online": {
+              "type": "boolean"
+            },
+            "updatedAt": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "oauth": {
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
+        "onlyProjectIds": {
+          "type": "array"
+        },
+        "payrollAccess": {
+          "type": "boolean"
+        },
+        "payrollFeature": {
+          "type": "boolean"
+        },
+        "poorTimeusePopup": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": "string"
+        },
+        "screencastsFeature": {
+          "type": "boolean"
+        },
+        "screenshots": {
+          "type": "integer"
+        },
+        "showOnReports": {
+          "type": "boolean"
+        },
+        "signupStep": {
+          "type": "integer"
+        },
+        "stripUrlQuery": {
+          "type": "boolean"
+        },
+        "tagIds": {
+          "type": "array"
+        },
+        "tasksMode": {
+          "type": "string"
+        },
+        "trackConnectivity": {
+          "type": "boolean"
+        },
+        "trackInternetConnectivity": {
+          "type": "boolean"
+        },
+        "trackedDataRetentionPeriod": {
+          "type": "integer"
+        },
+        "trackingMode": {
+          "type": "string"
+        },
+        "trackingType": {
+          "type": "string"
+        },
+        "videos": {
+          "type": "string"
+        },
+        "webAndAppTracking": {
+          "type": "string"
+        },
+        "whoCanAccessScreenshots": {
+          "type": "string"
+        },
+        "workCheckInterval": {
+          "type": "integer"
+        },
+        "workScheduleFeature": {
+          "type": "boolean"
+        },
+        "worklife": {
+          "properties": {
+            "hoursOutsideShiftWork": {
+              "properties": {
+                "included": {
+                  "type": "boolean"
+                },
+                "value": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "lateHoursAfter": {
+              "properties": {
+                "included": {
+                  "type": "boolean"
+                },
+                "value": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "tooManyHours": {
+              "properties": {
+                "included": {
+                  "type": "boolean"
+                },
+                "value": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "weekendWork": {
+              "properties": {
+                "included": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+    }
+  }
+  

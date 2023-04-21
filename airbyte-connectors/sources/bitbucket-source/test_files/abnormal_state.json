@@ -1,0 +1,27 @@
+{
+  "commits": {
+    "faros-playground/test-repo-1": {
+      "cutoff": "2025-01-01T00:00:00.000Z"
+    }
+  },
+  "issues": {
+    "faros-playground/test-repo-1": {
+      "cutoff": "2025-01-01T00:00:00.000Z"
+    }
+  },
+  "pipeline_steps": {
+    "faros-playground/test-repo-1": {
+      "cutoff": "2025-01-01T00:00:00.000Z"
+    }
+  },
+  "pull_request_activities": {
+    "faros-playground/test-repo-1": {
+      "cutoff": "2025-01-01T00:00:00.000Z"
+    }
+  },
+  "pull_requests": {
+    "faros-playground/test-repo-1": {
+      "cutoff": "2025-01-01T00:00:00.000Z"
+    }
+  }
+}
