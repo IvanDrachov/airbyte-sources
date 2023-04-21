@@ -122,7 +122,7 @@ export class Timedoctor {
   }
 
   private async *paginate<T>(
-    func: () => Promise<TimedoctorResponse>,
+    func: () => Promise<TimedoctorResponse<T>>,
     buildTo: (data: Dictionary<any>) => T,
     isNew?: (data: T) => boolean
   ): AsyncGenerator<T> {
@@ -168,7 +168,9 @@ export class Timedoctor {
     } = data;
 
     return {
-
+      allowManagerWorkSchedules: data.allowManagerWorkSchedules,
+      billingAccess: data.billingAccess,
+      payrollFeature: data.payrollFeature,
       role: data.role,
       hiredAt: data.hiredAt,
       lastSeen: {

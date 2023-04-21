@@ -2,8 +2,8 @@ import axios, { AxiosInstance } from "axios";
 import { Company } from "./types/company.type";
 import {Users} from "./types/users/types";
 
-export interface TimedoctorResponse {
-  data: Company[]
+export interface TimedoctorResponse<T> {
+  data: T[]
 }
 export class TimeDoctorClient {
   private axiosInstance: AxiosInstance;
@@ -18,7 +18,7 @@ export class TimeDoctorClient {
   }
 
   async getCompanies(): Promise<Company[]> {
-    const response = await this.axiosInstance.get<TimedoctorResponse>("/companies");
+    const response = await this.axiosInstance.get<TimedoctorResponse<Company>>("/companies");
     return response.data.data;
   }
 

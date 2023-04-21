@@ -8,8 +8,6 @@ import {
 } from 'faros-airbyte-cdk';
 import VError from 'verror';
 
-import {Bitbucket} from './bitbucket/bitbucket';
-import {BitbucketConfig} from './bitbucket/types';
 import {
   Branches,
   Commits,
@@ -27,18 +25,22 @@ import {
 /** The main entry point. */
 export function mainCommand(): Command {
   const logger = new AirbyteLogger();
-  const source = new BitbucketSource(logger);
+  const source = new TimedoctorSource(logger);
   return new AirbyteSourceRunner(logger, source).mainCommand();
 }
 
-export class BitbucketSource extends AirbyteSourceBase<BitbucketConfig> {
+interface TimedoctorConfig {
+  token: string;
+}
+
+export class TimedoctorSource extends AirbyteSourceBase<TimedoctorConfig> {
   async spec(): Promise<AirbyteSpec> {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     /* eslint-disable-next-line @typescript-eslint/no-var-requires */
     return new AirbyteSpec(require('../resources/spec.json'));
   }
 
-  async checkConnection(config: BitbucketConfig): Promise<[boolean, VError]> {
+  async checkConnection(config: TimedoctorConfig): Promise<[boolean, VError]> {
     try {
       const bitbucket = Bitbucket.instance(
         config as BitbucketConfig,
@@ -51,7 +53,7 @@ export class BitbucketSource extends AirbyteSourceBase<BitbucketConfig> {
     return [true, undefined];
   }
 
-  streams(config: BitbucketConfig): AirbyteStreamBase[] {
+  streams(config: TimedoctorConfig): AirbyteStreamBase[] {
     const pipelines = new Pipelines(config, this.logger);
     const pullRequests = new PullRequests(config, this.logger);
     return [
